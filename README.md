@@ -5,4 +5,5 @@ This repository will contain accompanying code for the manuscript
 
 ## Supplementary materials
 
-A supplementary simulation and a supplementary movie are available here.
+A supplementary simulation and a supplementary movie are available via the web 
+interface [here](https://ingewortel.github.io/2022-Tcell-evolution/).
