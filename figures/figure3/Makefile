@@ -9,11 +9,6 @@ simulation-data : data/optimum-speedpersistence.Rdata data/CPM2D-speedpersistenc
 # Get other make variables from a general configuration file.
 include ../settings.env
 
-# Specific for this figure:
-#
-OPTMACT=50
-OPTLACT=1165
-
 # path to here from ../scripts/simulation/ where scripts are
 pathToHere=../../figure3
 
