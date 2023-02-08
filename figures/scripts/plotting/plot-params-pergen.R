@@ -1,6 +1,7 @@
 library( ggplot2 )
-library( dplyr )
+library( dplyr, warn.conflicts = FALSE )
 require( cowplot, quietly = TRUE, warn.conflicts = FALSE )
+options(dplyr.summarise.inform = FALSE)
 source("../scripts/plotting/mytheme.R")
 
 argv <- commandArgs( trailingOnly = TRUE )
@@ -40,7 +41,7 @@ cols["4"] <- "black"
 
 p1 <- ggplot( d2, aes( x = gen, y = log10(mu_lact), group = sim, color = sim, fill = sim ) )
 if( nsim > 1 ){
-	p1 <- p1 + geom_line( data = d2[ d2$sim != "4", ], size = 0.3, show.legend=FALSE)
+	p1 <- p1 + geom_line( data = d2[ d2$sim != "4", ], linewidth = 0.3, show.legend=FALSE)
 }
 p1 <- p1 + geom_ribbon( data = d2[ d2$sim == "4", ], aes( ymin = log10(lact_lo), ymax = log10(lact_hi) ), color = NA, alpha = 0.3, show.legend=FALSE ) +
 	geom_line( data = d2[ d2$sim == "4", ], show.legend = FALSE ) +
@@ -55,7 +56,7 @@ p1 <- p1 + geom_ribbon( data = d2[ d2$sim == "4", ], aes( ymin = log10(lact_lo),
 
 p2 <- ggplot( d2, aes( x = gen, y = log10(mu_mact), group = sim, color = sim, fill = sim  ) )
 if( nsim > 1 ){
-	p2 <- p2 + geom_line( data = d2[ d2$sim != "4", ], size = 0.3, show.legend=FALSE)
+	p2 <- p2 + geom_line( data = d2[ d2$sim != "4", ], linewidth = 0.3, show.legend=FALSE)
 }
 p2 <- p2 + geom_ribbon( data = d2[ d2$sim == "4", ], aes( ymin = log10(mact_lo), ymax = log10(mact_hi) ), alpha = 0.3 , color = NA, show.legend=FALSE )  +
 	geom_line( data = d2[ d2$sim == "4", ], show.legend = FALSE ) +
