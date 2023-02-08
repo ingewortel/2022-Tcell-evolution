@@ -48,7 +48,7 @@ data/CPM2D-speedpersistence-traj.txt : ../scripts/analysis/analysis-wrapper.py \
 plots/F3panelA-speed-persistence.pdf : ../scripts/plotting/plot-traject-speed-persistence.R $(DIR)/CPM2D-speedpersistence-traj.txt settings/traj.txt | plots
 	Rscript $^ $@
 
-plots/F3panelA-FL-trajectory.pdf : ../scripts/plotting/plot-FL.R ../figure2/data/evolution-free-combined.txt settings/traj.txt settings/optrange.txt | plots
+plots/F3panelA-FL-trajectory.pdf : ../scripts/plotting/plot-FL.R ../figure2/$(DIR)/evolution-free-combined.txt settings/traj.txt settings/optrange.txt | plots
 	Rscript $< ../figure2/$(DIR)/evolution-free-combined.txt settings/traj.txt settings/optrange.txt plots/F3panelA-FL
 
 

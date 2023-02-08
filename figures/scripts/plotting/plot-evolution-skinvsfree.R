@@ -23,7 +23,7 @@ parms.free <- read.table("../figure3/settings/optrange.txt")
 # comparisons options
 files <- c( "skin" = paste0( datadir, "/evolution-skin-combined.txt"),
 			"free" = paste0( datadir, "/evolution-free-combined.txt"),
-		"free2" = paste0( "../figure2/", datadir, "/evolution-free-combined.txt" )
+		"free2" = paste0( "../figure2/", datadir, "/evolution-free-combined.txt"  ) )
 
 load.files <- function( filename, expname ){
 	d1 <- read.table( filename )
@@ -170,7 +170,7 @@ fitness_small <- d %>%
 	mutate( id = "x" )
 
 psmall <- ggplot( dsmall, aes( x = mact, y = lact, group = interaction( sim, exp ) ) ) +
-	stat_summary_hex( data = fitness_small, aes( z = area/cellvolume, group = id ), fun = "median" ) +
+	stat_summary_2d( data = fitness_small, aes( z = area/cellvolume, group = id ), fun = "median" ) +
 	geom_path( aes(color=gen, group = exp ) ) +
 	scale_x_continuous( limits=c(-0.5,2.7), 
 		breaks = log10( ax.breaks ), labels = ax.labels ) +
@@ -208,7 +208,7 @@ fitness_skin <- d %>%
 	mutate( mact = log10(mact) ) %>%
 	mutate( lact = log10(lact) )
 pskin <- ggplot( dskin, aes( x = mact, y = lact, group = interaction( sim, exp ) ) ) +
-	stat_summary_hex( data = fitness_skin, aes( z = area/cellvolume, group = exp ), fun = "median" ) +
+	stat_summary_2d( data = fitness_skin, aes( z = area/cellvolume, group = exp ), fun = "median" ) +
 	geom_path( aes(color=gen) ) +
 	scale_x_continuous( limits=c(-0.5,2.7), 
 		breaks = log10( ax.breaks ), labels = ax.labels ) +

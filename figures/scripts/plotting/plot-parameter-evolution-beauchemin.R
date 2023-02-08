@@ -53,7 +53,7 @@ limits.tpause <- c(floor(min(log10(d2$tpause))), ceiling(max(log10(d2$tpause))) 
 
 
 p1 <- ggplot( d2, aes( x = log10(tfree), y = log10(vfree) ) ) +
-	stat_summary_hex( data = d, aes( z = fitness/cell_area ), fun = "median", show.legend = FALSE ) +
+	stat_summary_2d( data = d, aes( z = fitness/cell_area ), fun = "median", show.legend = FALSE ) +
 	scale_x_continuous( limits=limits.tfree, breaks = log10( ax.breaks ), labels = ax.labels ) +
 	scale_y_continuous( limits=limits.vfree, breaks = log10( ax.breaks ), labels = ax.labels ) +
 	labs( x = expression( t[free] ), y = expression( v[free] ), fill = "Median fitness", color = "Generation" ) +
@@ -67,7 +67,7 @@ p1 <- ggplot( d2, aes( x = log10(tfree), y = log10(vfree) ) ) +
 	mytheme 
 	
 p2 <- ggplot( d2, aes( x = log10(tfree), y = log10(tpause) ) ) +
-	stat_summary_hex( data = d, aes( z = fitness/cell_area ), fun = "median", show.legend = FALSE ) +
+	stat_summary_2d( data = d, aes( z = fitness/cell_area ), fun = "median", show.legend = FALSE ) +
 	scale_x_continuous( limits=limits.tfree, breaks = log10( ax.breaks ), labels = ax.labels ) +
 	scale_y_continuous( limits=limits.tpause, breaks = log10( ax.breaks ), labels = ax.labels ) +
 	labs( x = expression( t[free] ), y = expression( t[pause] ), fill = "Median fitness", color = "Generation" ) +
@@ -84,7 +84,7 @@ p2 <- ggplot( d2, aes( x = log10(tfree), y = log10(tpause) ) ) +
 	)
 	
 p3 <- ggplot( d2, aes( x = log10(tpause), y = log10(vfree) ) ) +
-	stat_summary_hex( data = d, aes( z = fitness/500 ), fun = "median" ) +
+	stat_summary_2d( data = d, aes( z = fitness/500 ), fun = "median" ) +
 	scale_x_continuous( limits= limits.tpause, breaks = log10( ax.breaks ), labels = ax.labels ) +
 	scale_y_continuous( limits=limits.vfree, breaks = log10( ax.breaks ), labels = ax.labels ) +
 	labs( x = expression( "t"["pause"] ), y = expression( "v"["free"] ), fill = "Median fitness", color = "Generation" ) +
