@@ -23,7 +23,7 @@ parms.free <- read.table("../figure3/settings/optrange.txt")
 # comparisons options
 files <- c( "skin" = paste0( datadir, "/evolution-skin-combined.txt"),
 			"free" = paste0( datadir, "/evolution-free-combined.txt"),
-		"free2" = paste0( "../figure2/", datadir, "/evolution-free-combined.txt" ) )
+		"free2" = paste0( "../figure2/", datadir, "/evolution-free-combined.txt" )
 
 load.files <- function( filename, expname ){
 	d1 <- read.table( filename )

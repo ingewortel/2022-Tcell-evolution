@@ -3,6 +3,8 @@
 
 all : figureS4.pdf
 
+simulation-data : data/instantaneous.Rdata data/optimum-speedpersistence.Rdata
+
 # =============================== SETTINGS =====================================
 # Get other make variables from a general configuration file.
 include ../settings.env
@@ -51,16 +53,14 @@ data/instantaneous.Rdata : ../scripts/analysis/analyze-instantaneous.R progress/
 	Rscript $< CPMskin $(NSIM) settings/skin-start-comparison.txt "mact lact tissue" "2 1 3" 2 "150 150" $@
 
 # Step 4: plot
-plots/SF4panelA.pdf : ../scripts/plotting/plot-instantaneous-speed-nomove.R data/instantaneous.Rdata | plots
+plots/SF4panelA.pdf : ../scripts/plotting/plot-instantaneous-speed-nomove.R $(DIR)/instantaneous.Rdata | plots
 	Rscript $^ $@
 
 
 # =============================== PANEL B =======================================
 # Two of the required plots are actually made in figure 4.
-# The last one:
-plots/SF4panelB.pdf : ../scripts/plotting/plot-parameter-evolution.R ../figure2/$(DIR)/evolution-free-combined.txt | plots
-	Rscript $^ $@
 
+plots/SF4panelB.pdf : ../figure4/plots/F4panelA-skin.pdf ../figure4/plots/F4panelA-free.pdf
 
 # =============================== PANEL C =======================================
 
@@ -97,7 +97,7 @@ data/optimum-speedpersistence.Rdata : ../scripts/analysis/get-opt-speed-persiste
 	Rscript $^ $(NSIM) CPMskin $@
 
 
-plots/SF4panelD.pdf : ../scripts/plotting/plot-opt-speed-persistence.R data/optimum-speedpersistence.Rdata | plots
+plots/SF4panelD.pdf : ../scripts/plotting/plot-opt-speed-persistence.R $(DIR)/optimum-speedpersistence.Rdata | plots
 	Rscript $^ $@
 
 

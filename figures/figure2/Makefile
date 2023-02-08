@@ -19,7 +19,7 @@ pathToHere=../../figure2
 figure2.pdf : latex/figure2.pdf
 	cp $< $@
 
-latex/figure2.pdf : latex/figure2.tex  plots/F2panelB.pdf plots/F2panelC.pdf cartoons/evo-setup.pdf
+latex/figure2.pdf : latex/figure2.tex  plots/F2panelB.pdf plots/F2panelC.pdf
 	cd latex && latexmk -pdf figure2.tex && cp figure2.pdf ../ ;\
 	latexmk -c
 
