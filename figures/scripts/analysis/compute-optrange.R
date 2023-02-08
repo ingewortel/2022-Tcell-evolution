@@ -1,4 +1,4 @@
-library( dplyr )
+library( dplyr, warn.conflict = FALSE )
 
 argv <- commandArgs( trailingOnly = TRUE )
 

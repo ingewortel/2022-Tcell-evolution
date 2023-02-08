@@ -1,5 +1,5 @@
 library(ggplot2)
-library(dplyr)
+library(dplyr,warn.conflict =FALSE)
 library(cowplot)
 source("../scripts/plotting/mytheme.R")
 mytheme <- mytheme + theme( 
