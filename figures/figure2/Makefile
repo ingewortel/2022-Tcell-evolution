@@ -43,11 +43,11 @@ data/evolution-free-combined.txt : $(foreach i, $(runs), data/evolution-free-$(i
 	done > $@
 
 # Step 4: plotting.
-plots/F2panelB.pdf : ../scripts/plotting/plot-params-pergen.R data/evolution-free-combined.txt | plots
+plots/F2panelB.pdf : ../scripts/plotting/plot-params-pergen.R input/evolution-free-combined.txt | plots
 	Rscript $^ $@
 
 
-plots/F2panelC.pdf : ../scripts/plotting/plot-parameter-evolution.R data/evolution-free-combined.txt | plots
+plots/F2panelC.pdf : ../scripts/plotting/plot-parameter-evolution.R input/evolution-free-combined.txt | plots
 	Rscript $^ $@
 
 # ============================ FOLDERS/OTHER ====================================
@@ -72,4 +72,4 @@ latex-clean :
 	rm -f latex/*.pdf
 	
 clean : latex-clean
-	rm -f figure*.pdf && rm -rf data && rm -rf plots && rm -rf progress
+	rm -f figure*.pdf && rm -rf data && rm -rf plots && rm -rf progress && rm -rf settings
