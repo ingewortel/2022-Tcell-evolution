@@ -3,6 +3,8 @@
 
 all : figure2.pdf
 
+simulation-data : data/evolution-free-combined.txt
+
 # =============================== SETTINGS =====================================
 # Get other make variables from a general configuration file.
 include ../settings.env
