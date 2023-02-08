@@ -70,7 +70,7 @@ settings/free2-optrange.txt : ../scripts/analysis/compute-optrange.R | settings
 	Rscript $< $(OPTMACT2) $(OPTLACT2) $@
 
 plots/F4panelA-tracks.pdf : ../scripts/plotting/plot-evolution-skinvsfree.R \
-	$(DIR)/evolution-skin-combined.txt data/evolution-free-combined.txt \
+	$(DIR)/evolution-skin-combined.txt $(DIR)/evolution-free-combined.txt \
 	../figure2/$(DIR)/evolution-free-combined.txt settings/skin-optrange.txt settings/free2-optrange.txt | plots
 	Rscript $< "skin free free2" $(DIR) plots/F4panelA
 	
