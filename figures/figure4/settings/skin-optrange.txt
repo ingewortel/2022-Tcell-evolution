@@ -1,0 +1,13 @@
+41 1190 stiff
+45 1190 stiff
+50 1190 stiff
+55 1190 stiff
+61 1190 stiff
+67 1190 stiff
+74 1190 stiff
+55 882 stiff
+55 974 stiff
+55 1077 stiff
+55 1315 stiff
+55 1453 stiff
+55 1606 stiff
