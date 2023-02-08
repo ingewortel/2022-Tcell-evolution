@@ -1,0 +1,34 @@
+\documentclass[tikz]{standalone}
+
+\input{../../scripts/latex/figure-preamble.tex}
+
+
+\begin{document}
+\scriptsize
+
+
+\begin{tikzpicture}[anchor=north west]
+	\node at (0,0) {\includegraphics{../plots/SF2panelA.pdf}};
+	\node at (0,0) {\figf A};
+	
+	\begin{scope}[yshift=-5cm]
+		\begin{scope}
+			\clip (0,0) rectangle +(10.5,-4);
+			\node[scale=0.8] at (0.3,0) {\includegraphics{../plots/SF2panelB.pdf}};
+		\end{scope}
+		\begin{scope}[yshift=-4cm]
+			\clip (0.5,0) rectangle +(10,-4);
+			\node[scale=0.8] at (-9.7,0) {\includegraphics{../plots/SF2panelB.pdf}};
+		\end{scope}
+		\node at (0,0) {\figf B};
+		
+		\node at (2.9,-0.3) {point 2};
+		\node at (7.9,-0.3) {point 3};
+		\node at (2.9,-4.3) {point 4};
+		\node at (7.9,-4.3) {point 5};
+	\end{scope}
+	
+\end{tikzpicture}
+
+
+\end{document}
