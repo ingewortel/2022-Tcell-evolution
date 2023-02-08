@@ -11,7 +11,8 @@ mytheme <- mytheme + theme(
 argv <- commandArgs( trailingOnly = TRUE )
 
 compwhich <- unlist(strsplit( argv[1], " " ) )
-outplot <- argv[2]
+datadir <- argv[2]
+outplot <- argv[3]
 
 
 cellvolume <- 500
@@ -20,9 +21,9 @@ parms.free <- read.table("../figure3/settings/optrange.txt")
 
 
 # comparisons options
-files <- c( "skin" = "data/evolution-skin-combined.txt",
-			"free" = "data/evolution-free-combined.txt",
-		"free2" = "../figure2/data/evolution-free-combined.txt" )
+files <- c( "skin" = paste0( datadir, "/evolution-skin-combined.txt"),
+			"free" = paste0( datadir, "/evolution-free-combined.txt"),
+		"free2" = paste0( "../figure2/", datadir, "/evolution-free-combined.txt" ) )
 
 load.files <- function( filename, expname ){
 	d1 <- read.table( filename )
