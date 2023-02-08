@@ -3,7 +3,7 @@
 
 all : figure3.pdf
 
-simulation-data : 
+simulation-data : data/optimum-speedpersistence.Rdata data/CPM2D-speedpersistence-traj.txt data/CPM2D-speedpersistence-opt.txt
 
 # =============================== SETTINGS =====================================
 # Get other make variables from a general configuration file.
@@ -50,7 +50,7 @@ data/CPM2D-speedpersistence-traj.txt : ../scripts/analysis/analysis-wrapper.py \
 	python3 $< settings/traj.txt $(NSIM) CPM2D $(GROUPSIZE) $(MAXPROCESSORS) $@
 
 # Step 4: plot
-plots/F3panelA-speed-persistence.pdf : ../scripts/plotting/plot-traject-speed-persistence.R data/CPM2D-speedpersistence-traj.txt settings/traj.txt | plots
+plots/F3panelA-speed-persistence.pdf : ../scripts/plotting/plot-traject-speed-persistence.R $(DIR)/CPM2D-speedpersistence-traj.txt settings/traj.txt | plots
 	Rscript $^ $@
 
 plots/F3panelA-FL-trajectory.pdf : ../scripts/plotting/plot-FL.R ../figure2/data/evolution-free-combined.txt settings/traj.txt settings/optrange.txt | plots
@@ -88,10 +88,12 @@ data/optimum-speedpersistence.Rdata : ../scripts/analysis/get-opt-speed-persiste
 
 # Step 5: plot
 plots/F3panelB-speed-persistence.pdf : ../scripts/plotting/plot-opt-speed-persistence.R \
-	data/optimum-speedpersistence.Rdata | plots
+	$(DIR)/optimum-speedpersistence.Rdata | plots
 	Rscript $^ $@
 
 
+data : 
+	mkdir -p $@
 
 data/tracks :
 	mkdir -p $@
