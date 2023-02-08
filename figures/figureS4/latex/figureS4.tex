@@ -1,0 +1,70 @@
+\documentclass[tikz]{standalone}
+
+\input{../../scripts/latex/figure-preamble.tex}
+
+
+\begin{document}
+\scriptsize
+
+
+\begin{tikzpicture}[anchor=north west]
+
+\begin{scope}
+	\node[anchor = north west] at (0,0) {
+		\includegraphics{../plots/SF4panelA.pdf}
+	};\\textlambda{}
+	\node[anchor = north west] at (0,0.3) {\figf A};
+\end{scope}
+
+\begin{scope}[yshift=0cm, xshift=6cm]
+
+	\node[anchor = north west] at (3.3,0.2) {
+		\includegraphics{../../figure4/plots/F4panelA-skin.pdf}
+	};
+	\node[anchor = north west] at (0,0.2) {
+		\includegraphics{../../figure4/plots/F4panelA-free.pdf}
+	};
+	
+	%\begin{scope}[xshift=3.1cm]
+%	\clip (4.5,-2.2) rectangle +(1.5,-1.9);
+%	\node[anchor = north west] at (0,0) {
+%		\includegraphics{../plots/SF4panelB.pdf}
+%	};
+%
+%	\end{scope}
+
+	\node[anchor = north] at (2.9,0.2) {free};
+	\node[anchor = north] at (6.0,0.2) {skin};
+	
+	\node[anchor = north west] at (0,0.3) {\figf B};		
+\end{scope}
+
+
+\begin{scope}[yshift=-5cm]
+	\node[anchor = north west] at (0,0) {
+		\includegraphics{../plots/SF4panelC.pdf}
+	};
+	\node[anchor = north west] at (0,0) {\figf C};		
+\end{scope}
+
+\begin{scope}[yshift=-11.3cm]%, xshift=10.2cm]
+
+	\node[anchor = north west] at (0.3,0) {
+		\includegraphics{../../figure4/plots/F4panelA-zoom2.pdf}
+	};
+
+	\node[anchor = north west] at (3,0) {
+		\includegraphics{../plots/SF4panelD.pdf}
+	};
+
+		
+	\node[anchor = north west] at (0,0.3) {\figf D};		
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+
+
+\end{document}
