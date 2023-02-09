@@ -14,7 +14,7 @@ TFREESTART=1
 VFREESTART=1
 TPAUSESTART=1
 # NUMGEN can be lower because the fitness has a maximum
-#NUMGEN=26
+NUMGEN=26
 POPSIZE=10
 
 #

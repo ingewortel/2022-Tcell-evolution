@@ -10,6 +10,8 @@ simulation-data : data/free-instantaneous.Rdata data/skin-instantaneous.Rdata da
 # Get other make variables from a general configuration file.
 include ../settings.env
 
+NUMGEN=15
+
 # path to here from ../scripts/simulation/ where scripts are
 pathToHere=../../figure4
 
