@@ -1,7 +1,8 @@
 # T-cell evolution
 
-This repository will contain accompanying code for the manuscript 
+This repository contains code for the manuscript 
 "Interpreting T-cell search 'strategies' in the light of evolution under constraints".
+Please see the README in the `figures` folder for details.
 
 ## Supplementary materials
 
