@@ -9,12 +9,6 @@ simulation-data : data/instantaneous.Rdata data/optimum-speedpersistence.Rdata
 # Get other make variables from a general configuration file.
 include ../settings.env
 
-# Specific for this figure:
-# optimal parameters for skin evolution
-OPTMACT=55
-OPTLACT=1190
-
-
 # overrule maxprocessors
 MAXPROCESSORS=4
 
@@ -74,7 +68,7 @@ plots/SF4panelC.pdf : ../scripts/plotting/plot-FL-pooled.R ../figure4/$(DIR)/evo
 # =============================== PANEL D =======================================
 # Step 1: compute the range of parameters around the optimum
 settings/optrange.txt : ../scripts/analysis/compute-optrange.R | settings
-	Rscript $< $(OPTMACT) $(OPTLACT) settings/tmp.txt &&\
+	Rscript $< $(OPTMACTSKIN) $(OPTLACTSKIN) settings/tmp.txt &&\
 	cat settings/tmp.txt | awk '{print $$0,"stiff"}' > $@ && rm settings/tmp.txt
 
 # Step 2: use the python wrapper script to perform the simulations along different
