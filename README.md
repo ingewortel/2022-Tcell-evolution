@@ -1,5 +1,7 @@
 # T-cell evolution
 
+[![DOI](https://zenodo.org/badge/511920528.svg)](https://zenodo.org/badge/latestdoi/511920528)
+
 This repository contains code for the manuscript 
 "Interpreting T-cell search 'strategies' in the light of evolution under constraints".
 Please see the README in the `figures` folder for details.
